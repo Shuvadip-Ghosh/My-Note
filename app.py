@@ -95,10 +95,7 @@ def copy():
             flash("Reference Deleted successfully")
             return redirect('/reference')
 
-@app.route('/ref', methods=['GET', 'POST'])
-def ref():
-    if request.method == 'POST':
-        return redirect(url_for('reference'))
+
 @app.route('/search', methods=['GET', 'POST'])
 def search():
     if request.method == 'POST':
