@@ -11,25 +11,42 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
     <title>My Todo</title>
+
 </head>
 
 <body>
     <!-- navbarbar  -->
-    <div class="container-fluid">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-primary container-fluid">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/">My Todo</a>
-                <a class="navbar-brand" href="/reference">My Reference</a>
-                <form class="d-flex" action="/search" method="post">
-                    <input class="form-control me-2" name="search" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-dark" type="submit">Search</button>
-                </form>
-            </div>
-        </nav>
-    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark navbar-light bg-primary container-fluid" style="position:sticky; position:-webkit-sticky; top:0px;">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/"style="colour: white important;">My Todo</a>
+            <a class="navbar-brand" href="/reference">My Reference</a>
+            <a class="navbar-brand"></a>
+            <a class="navbar-brand"></a>
+            <a class="navbar-brand"></a>
+            <a class="navbar-brand"></a>
+            <a class="navbar-brand"></a>
+            <a class="navbar-brand"></a>
+            <a class="navbar-brand"></a>
+            <a class="navbar-brand"></a>
+            <a class="navbar-brand"></a>
+            <a class="navbar-brand"></a>
+            <a class="navbar-brand"></a>
+            <a class="navbar-brand"></a>
+            <a class="navbar-brand"></a>
+            <a class="navbar-brand"></a>
+            <a class="navbar-brand"></a>
+            <a class="navbar-brand"></a>
+            <a class="navbar-brand"></a>
+            <form class="d-flex" action="/search" method="post">
+                <input class="form-control me-2" name="search" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-dark" type="submit">Search</button>
+            </form>
+        </div>
+      </nav>
     {% block body %}
 
     {% endblock body %}
 </body>
-
+{% block script %}
+{% endblock script %}
 </html>

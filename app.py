@@ -64,6 +64,11 @@ def update(sno):
 
 @app.route('/reference', methods=['GET', 'POST'])
 def reference():
+    ref = Ref.query.all()
+    return render_template('reference.html',refs = ref)
+
+@app.route('/referenceadd', methods=['GET', 'POST'])
+def referencesearch():
     if request.method == "POST":
         name = request.form['title']
         desc = request.form['desc']
@@ -72,28 +77,20 @@ def reference():
         db.session.add(referenc)
         db.session.commit()
         flash("Added your reference successfully")
-        ref = Ref.query.all()
-        return render_template('reference.html',refs = ref)
-    ref = Ref.query.all()
-    return render_template('reference.html',refs = ref)
+    return redirect(url_for(referenc))
+
 
 @app.route('/copy', methods=['GET', 'POST'])
 def copy():
     if request.method == "POST":
-        if request.form.get('copy'):
-            var = request.form.get('copy')
-            print (var)
-            import clipboard
-            clipboard.copy(var)
-            flash("Copied")
-            return redirect('/reference')
-        elif request.form.get('Delete'):
+        if request.form.get('Delete'):
             sno = request.form['Delete']
             todo = Ref.query.filter_by(sno=sno).first()
             db.session.delete(todo)
             db.session.commit()
             flash("Reference Deleted successfully")
             return redirect('/reference')
+        
 
 
 @app.route('/search', methods=['GET', 'POST'])
